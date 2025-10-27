@@ -20,9 +20,9 @@ jobs:
           echo "IMAGE_NAME=${UUID}" >> $GITHUB_OUTPUT
           echo "IMAGE_NAME=${UUID}" >> $GITHUB_ENV
       - name: Build docker image
-        run: docker build -t ttl.sh/${UUID}:2h .
+        run: docker build -t ttl.sh/${IMAGE_NAME}:2h .
       - name: Push docker image
-        run: docker push ttl.sh/${UUID}:2h
+        run: docker push ttl.sh/${IMAGE_NAME}:2h
 
   lint:
     runs-on: ubuntu-latest
