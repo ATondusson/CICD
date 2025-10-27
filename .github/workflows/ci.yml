@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: install
     container:
-      image: ttl.sh/${{ IMAGE_NAME }}:2h
+      image: ttl.sh/${{ needs.install.outputs.IMAGE_NAME }}:2h
     steps:
       - run: npm run lint
 
@@ -36,6 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: install
     container:
-      image: ttl.sh/${{ IMAGE_NAME }}:2h
+      image: ttl.sh/${{ needs.install.outputs.IMAGE_NAME }}:2h
     steps:
       - run: npm test
