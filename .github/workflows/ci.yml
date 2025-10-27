@@ -10,7 +10,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     outputs:
-      IMAGE_NAME: ${{ steps.generate-uuid.outputs.uuid }}
+      IMAGE_NAME: ${{ steps.generate-uuid.outputs.IMAGE_NAME }}
     steps:
       - uses: actions/checkout@v4
       - name: Generate UUID
